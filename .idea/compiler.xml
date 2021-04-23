@@ -10,5 +10,8 @@
         <module name="psk" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="psk" target="11" />
+    </bytecodeTargetLevel>
   </component>
 </project>
