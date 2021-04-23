@@ -1,48 +1,47 @@
 package vu.lt.usecases;
 
-import vu.lt.entities.Role;
-import vu.lt.persistence.RolesDAO;
-
 import javax.annotation.PostConstruct;
 import javax.enterprise.inject.Model;
+import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.transaction.Transactional;
 import java.io.Serializable;
-import java.util.List;
+import java.util.Map;
+
+import lombok.Getter;
+import lombok.Setter;
+import vu.lt.entities.Role;
+import vu.lt.entities.Show;
+import vu.lt.persistence.RolesDAO;
+import vu.lt.persistence.ShowsDAO;
 
 @Model
 public class Roles implements Serializable {
 
     @Inject
+    private ShowsDAO showDAO;
+
+    @Inject
     private RolesDAO rolesDAO;
 
+    @Getter @Setter
     private Role roleToCreate = new Role();
 
-    private List<Role> allRoles;
+    @Getter @Setter
+    private Show show;
+
     @PostConstruct
-    public void init(){
-        loadRoles();
-    }
-
-    public void loadRoles() {
-        this.allRoles = rolesDAO.loadAll();
-    }
-
-    public List<Role> getAllRoles(){
-        return allRoles;
+    public void init() {
+        Map<String, String> requestParameters =
+                FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap();
+        Integer teamId = Integer.parseInt(requestParameters.get("showId"));
+        this.show = showDAO.findOne(teamId);
     }
 
     @Transactional
-    public String createRole(){
-        this.rolesDAO.persist(roleToCreate);
-        return "success";
-    }
-
-    public Role getRoleToCreate() {
-        return roleToCreate;
-    }
-
-    public void setRoleToCreate(Role roleToCreate) {
-        this.roleToCreate = roleToCreate;
+    public String createRole() {
+        roleToCreate.setShow(this.show);
+        rolesDAO.persist(roleToCreate);
+        return "roles?faces-redirect=true&teamId=" + this.show.getId();
     }
 }

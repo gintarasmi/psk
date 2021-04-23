@@ -13,15 +13,15 @@
 >
 <h:head/>
 <h:body>
-    <h2>Roles:</h2>
+    <h2>Shows:</h2>
     <ol>
-        <ui:repeat value="#{roles.allRoles}" var="role">
-            <li>#{role.name}</li>
+        <ui:repeat value="#{shows.allShows}" var="show">
+            <li><h:link value="#{show.name}" outcome="roles?showId=#{show.id}" /></li>
         </ui:repeat>
     </ol>
     <h:form>
-        <h:inputText value="#{roles.roleToCreate.name}" required="true" />
-        <h:commandButton value="Add new role" action="#{roles.createRole}" />
+        <h:inputText value="#{shows.showToCreate.name}" required="true" />
+        <h:commandButton value="Add new show" action="#{shows.createShow}" />
     </h:form>
 </h:body>
 </html>

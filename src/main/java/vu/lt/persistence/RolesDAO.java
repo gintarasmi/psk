@@ -13,14 +13,6 @@ public class RolesDAO {
     @Inject
     private EntityManager em;
 
-    public List<Role> loadAll() {
-        return em.createNamedQuery("Role.findAll", Role.class).getResultList();
-    }
-
-    public void setEm(EntityManager em) {
-        this.em = em;
-    }
-
     public void persist(Role role){
         this.em.persist(role);
     }
