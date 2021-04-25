@@ -23,6 +23,7 @@ public class ShowsDAO {
     public void persist(Show show){
         this.em.persist(show);
     }
+    public void delete(Show show){ this.em.remove(show); }
 
     public Show findOne(Integer id) { return em.find(Show.class, id); }
 }

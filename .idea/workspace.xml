@@ -9,20 +9,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="78763e8a-2d15-4248-b82e-d4873073cfc2" name="Default Changelist" comment="Following java-ee-practice: Setup DB and first entity">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vu/lt/entities/Show.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vu/lt/persistence/ShowsDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vu/lt/usecases/Shows.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/roles.xhtml" afterDir="false" />
+    <list default="true" id="78763e8a-2d15-4248-b82e-d4873073cfc2" name="Default Changelist" comment="Added entity Show with a oneToMany relation with Role">
+      <change afterPath="$PROJECT_DIR$/src/main/java/vu/lt/entities/Genre.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/vu/lt/persistence/GenresDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/vu/lt/usecases/Genres.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/vu/lt/usecases/ShowsForGenre.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/genre.xhtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/genres.xhtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/psk.iml" beforeDir="false" afterPath="$PROJECT_DIR$/psk.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/vu/lt/entities/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vu/lt/entities/Role.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vu/lt/entities/Show.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vu/lt/entities/Show.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/vu/lt/persistence/RolesDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vu/lt/persistence/RolesDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vu/lt/usecases/Roles.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vu/lt/usecases/Roles.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/faces-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/faces-config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vu/lt/persistence/ShowsDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vu/lt/persistence/ShowsDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vu/lt/usecases/Roles.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vu/lt/usecases/RolesForShow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vu/lt/usecases/Shows.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vu/lt/usecases/Shows.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/index.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/roles.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/roles.xhtml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,8 +38,8 @@
         <option value="Tag Library Descriptor" />
         <option value="cdi.beans_1_1" />
         <option value="jsf" />
-        <option value="XHTML File" />
         <option value="Class" />
+        <option value="XHTML File" />
       </list>
     </option>
   </component>
@@ -69,7 +71,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../java-ee-practice" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="preferences.applicationServers" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -77,15 +79,20 @@
       <recent name="C:\Users\gmink\Desktop\psk\src\main\webapp\WEB-INF" />
       <recent name="C:\Users\gmink\Desktop\psk\src\main\webapp\META-INF" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="vu.lt.persistence" />
+    </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -179,7 +186,8 @@
       <workItem from="1619160757695" duration="330000" />
       <workItem from="1619161188412" duration="2577000" />
       <workItem from="1619172836508" duration="1586000" />
-      <workItem from="1619187946693" duration="5018000" />
+      <workItem from="1619187946693" duration="6331000" />
+      <workItem from="1619268309923" duration="18221000" />
     </task>
     <task id="LOCAL−00001" summary="Initial commit">
       <created>1619090907839</created>
@@ -199,7 +207,13 @@
       <option name="presentableId" value="LOCAL−00003" />
       <updated>1619187962086</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL−00004" summary="Added entity Show with a oneToMany relation with Role">
+      <created>1619193366032</created>
+      <option name="number" value="LOCAL−00004" />
+      <option name="presentableId" value="LOCAL−00004" />
+      <updated>1619193366032</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -221,6 +235,7 @@
     <MESSAGE value="Initial commit" />
     <MESSAGE value="Setup DB and first entity" />
     <MESSAGE value="Following java-ee-practice: Setup DB and first entity" />
-    <option name="LAST_COMMIT_MESSAGE" value="Following java-ee-practice: Setup DB and first entity" />
+    <MESSAGE value="Added entity Show with a oneToMany relation with Role" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added entity Show with a oneToMany relation with Role" />
   </component>
 </project>

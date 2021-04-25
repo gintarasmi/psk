@@ -16,4 +16,5 @@ public class RolesDAO {
     public void persist(Role role){
         this.em.persist(role);
     }
+    public void delete(Role role){ this.em.remove(role); }
 }

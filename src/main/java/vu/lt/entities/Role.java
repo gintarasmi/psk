@@ -25,6 +25,8 @@ public class Role implements Serializable {
     @Column(name = "NAME")
     private String name;
 
+    private Integer episodeCount;
+
     @ManyToOne
     @JoinColumn(name="SHOW_ID")
     private Show show;

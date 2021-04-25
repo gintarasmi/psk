@@ -2,6 +2,7 @@ package vu.lt.usecases;
 
 import lombok.Getter;
 import lombok.Setter;
+import vu.lt.entities.Role;
 import vu.lt.entities.Show;
 import vu.lt.persistence.ShowsDAO;
 
@@ -31,6 +32,11 @@ public class Shows {
     @Transactional
     public String createShow(){
         this.showsDAO.persist(showToCreate);
+        return "index?faces-redirect=true";
+    }
+    @Transactional
+    public String deleteShow(Show showToDelete){
+        this.showsDAO.delete(showToDelete);
         return "index?faces-redirect=true";
     }
 

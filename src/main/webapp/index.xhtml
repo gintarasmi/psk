@@ -14,14 +14,18 @@
 <h:head/>
 <h:body>
     <h2>Shows:</h2>
-    <ol>
+    <table>
         <ui:repeat value="#{shows.allShows}" var="show">
-            <li><h:link value="#{show.name}" outcome="roles?showId=#{show.id}" /></li>
+            <tr>
+               <td><h:link value="#{show.name}" outcome="roles?showId=#{show.id}" /></td>
+                <td><h:form><h:commandButton value="Delete" action="#{shows.deleteShow(show)}" /></h:form></td>
+            </tr>
         </ui:repeat>
-    </ol>
+    </table>
     <h:form>
         <h:inputText value="#{shows.showToCreate.name}" required="true" />
         <h:commandButton value="Add new show" action="#{shows.createShow}" />
     </h:form>
+    <h:link outcome="genres" value="Genres"/>
 </h:body>
 </html>

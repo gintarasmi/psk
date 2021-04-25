@@ -24,6 +24,10 @@ public class Show {
     @OneToMany(mappedBy = "show", fetch = FetchType.EAGER)
     private List<Role> roles = new ArrayList<>();
 
+    @ManyToMany(mappedBy="shows")
+    @Getter @Setter
+    private List<Genre> genres = new ArrayList<>();
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

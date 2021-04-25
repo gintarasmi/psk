@@ -16,7 +16,7 @@ import vu.lt.persistence.RolesDAO;
 import vu.lt.persistence.ShowsDAO;
 
 @Model
-public class Roles implements Serializable {
+public class RolesForShow implements Serializable {
 
     @Inject
     private ShowsDAO showDAO;
@@ -42,6 +42,12 @@ public class Roles implements Serializable {
     public String createRole() {
         roleToCreate.setShow(this.show);
         rolesDAO.persist(roleToCreate);
-        return "roles?faces-redirect=true&teamId=" + this.show.getId();
+        return "roles?faces-redirect=true&showId=" + this.show.getId();
+    }
+
+    @Transactional
+    public String deleteRole(Role role){
+        this.rolesDAO.delete(role);
+        return "roles?faces-redirect=true&showId=" + this.show.getId();
     }
 }

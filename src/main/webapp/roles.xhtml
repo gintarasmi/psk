@@ -9,17 +9,34 @@
       xmlns:f="http://java.sun.com/jsf/core">
 <head/>
 <body>
-    <h2>Roles playing in #{roles.show.name} :</h2>
-    <ol>
-        <ui:repeat value="#{roles.show.roles}" var="role">
-            <li>#{role.name}</li>
+    <h2>Roles playing in #{rolesForShow.show.name} :</h2>
+    <table>
+        <tr>
+            <td>Name</td>
+            <td>Episode count</td>
+            <td>Delete?</td>
+        </tr>
+        <ui:repeat value="#{rolesForShow.show.roles}" var="role">
+            <tr>
+                <td>#{role.name}</td>
+                <td>#{role.episodeCount}</td>
+                <td>
+                    <h:form>
+                        <h:commandButton value="Delete" action="#{rolesForShow.deleteRole(role)}" >
+                            <f:param name="showId" value="#{rolesForShow.show.id}" />
+                        </h:commandButton>
+                    </h:form>
+                </td>
+            </tr>
         </ui:repeat>
-    </ol>
+    </table>
     <h:form>
-        <h:inputText a:placeholder="name" value="#{roles.roleToCreate.name}" required="true" />
-        <h:commandButton value="Add role to the show" action="#{roles.createRole}" >
-            <f:param name="showId" value="#{roles.show.id}" />
+        <h:inputText a:placeholder="name" value="#{rolesForShow.roleToCreate.name}" required="true" />
+        <h:inputText a:placeholder="episode count" value="#{rolesForShow.roleToCreate.episodeCount}" required="true" />
+        <h:commandButton value="Add role to the show" action="#{rolesForShow.createRole}" >
+            <f:param name="showId" value="#{rolesForShow.show.id}" />
         </h:commandButton>
     </h:form>
+    <h:link outcome="index" value="Main page"/>
 </body>
 </html>
