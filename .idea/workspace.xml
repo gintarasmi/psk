@@ -9,21 +9,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="78763e8a-2d15-4248-b82e-d4873073cfc2" name="Default Changelist" comment="Added many to many relations and cleaned up the UI">
-      <change afterPath="$PROJECT_DIR$/.gradle/6.7/executionHistory/executionHistory.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/6.7/fileChanges/last-build.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/6.7/fileHashes/fileHashes.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/6.7/gc.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/configuration-cache/gc.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/vcs-1/gc.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vu/lt/persistence/MyBatisResources.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/MyBatisConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/generatorConfig.xml" afterDir="false" />
+    <list default="true" id="78763e8a-2d15-4248-b82e-d4873073cfc2" name="Default Changelist" comment="Generated myBatis files">
+      <change afterPath="$PROJECT_DIR$/src/main/java/vu/lt/mybatis/dao/ShowGenreMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/vu/lt/mybatis/model/ShowGenre.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/vu/lt/usecases/ShowsMyBatis.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mybatis.xml/ShowGenreMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/mybatis/shows.xhtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vu/lt/mybatis/dao/GenreMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vu/lt/mybatis/dao/GenreMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vu/lt/mybatis/dao/RoleMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vu/lt/mybatis/dao/RoleMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vu/lt/mybatis/dao/ShowMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vu/lt/mybatis/dao/ShowMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vu/lt/usecases/mybatis/xml/GenreMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mybatis.xml/GenreMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vu/lt/usecases/mybatis/xml/RoleMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mybatis.xml/RoleMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vu/lt/usecases/mybatis/xml/ShowMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mybatis.xml/ShowMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/generatorConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/generatorConfig.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.xhtml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,8 +37,8 @@
         <option value="Tag Library Descriptor" />
         <option value="cdi.beans_1_1" />
         <option value="jsf" />
-        <option value="XHTML File" />
         <option value="Class" />
+        <option value="XHTML File" />
       </list>
     </option>
   </component>
@@ -77,11 +77,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\gmink\Desktop\psk\src\main\java\vu\lt\usecases" />
-      <recent name="C:\Users\gmink\Desktop\psk\src\main\java\vu\lt" />
       <recent name="C:\Users\gmink\Desktop\psk\src\main\resources" />
-      <recent name="C:\Users\gmink\Desktop\psk\src\main\resources\META-INF" />
-      <recent name="C:\Users\gmink\Desktop\psk\src\main\webapp\WEB-INF" />
+      <recent name="C:\Users\gmink\Desktop\psk\src\main\java\vu\lt\mybatis\dao" />
+      <recent name="C:\Users\gmink\Desktop\psk\src\main\java\vu\lt\mybatis\model" />
+      <recent name="C:\Users\gmink\Desktop\psk\src\main\java\vu\lt\usecases\mybatis\xml" />
+      <recent name="C:\Users\gmink\Desktop\psk\src\main\java\vu\lt\usecases" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="vu.lt.persistence" />
@@ -92,18 +92,7 @@
       <command value="mvn mybatis-generator:generate" />
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.C:/Users/gmink/Desktop/psk">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JBoss Server.JBoss 23.0.1.Final">
     <configuration name="C:/Users/gmink/Desktop/psk" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -219,7 +208,7 @@
       <workItem from="1619172836508" duration="1586000" />
       <workItem from="1619187946693" duration="6331000" />
       <workItem from="1619268309923" duration="19349000" />
-      <workItem from="1619513317658" duration="1723000" />
+      <workItem from="1619513317658" duration="4692000" />
     </task>
     <task id="LOCAL−00001" summary="Initial commit">
       <created>1619090907839</created>
@@ -251,7 +240,13 @@
       <option name="presentableId" value="LOCAL−00005" />
       <updated>1619353525127</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL−00006" summary="Generated myBatis files">
+      <created>1619515336070</created>
+      <option name="number" value="LOCAL−00006" />
+      <option name="presentableId" value="LOCAL−00006" />
+      <updated>1619515336070</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -276,6 +271,7 @@
     <MESSAGE value="Following java-ee-practice: Setup DB and first entity" />
     <MESSAGE value="Added entity Show with a oneToMany relation with Role" />
     <MESSAGE value="Added many to many relations and cleaned up the UI" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added many to many relations and cleaned up the UI" />
+    <MESSAGE value="Generated myBatis files" />
+    <option name="LAST_COMMIT_MESSAGE" value="Generated myBatis files" />
   </component>
 </project>
