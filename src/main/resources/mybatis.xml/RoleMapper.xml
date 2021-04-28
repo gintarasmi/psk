@@ -11,6 +11,9 @@
     <result column="NAME" jdbcType="VARCHAR" property="name" />
     <result column="SHOW_ID" jdbcType="INTEGER" property="showId" />
     <result column="EPISODECOUNT" jdbcType="INTEGER" property="episodecount" />
+    <association property="show"
+                 columnPrefix="show"
+                 resultMap="vu.lt.mybatis.dao.ShowMapper.BaseResultMap"/>
   </resultMap>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     <!--

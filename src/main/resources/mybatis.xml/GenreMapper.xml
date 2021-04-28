@@ -9,6 +9,9 @@
     -->
     <id column="ID" jdbcType="INTEGER" property="id" />
     <result column="NAME" jdbcType="VARCHAR" property="name" />
+    <collection property="shows" javaType="ArrayList"
+                ofType="show" column="id"
+                select="selectShowsForGenre"/>
   </resultMap>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     <!--
@@ -56,5 +59,11 @@
     -->
     select ID, NAME
     from PUBLIC.GENRE
+  </select>
+  <select id="selectShowsForGenre" resultType="vu.lt.mybatis.model.Show">
+    SELECT s.id showId, s.name name
+    FROM show s
+           LEFT JOIN show_genre db ON s.id = db.show_id
+    WHERE db.genre_id = #{id,jdbcType=INTEGER}
   </select>
 </mapper>

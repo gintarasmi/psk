@@ -5,11 +5,11 @@
 >
 <h:head/>
 <h:body>
-    <h2>Shows:</h2>
+    <h2>Mybatis Shows:</h2>
     <table>
         <ui:repeat value="#{showsMyBatis.allShows}" var="show">
             <tr>
-                <td><h:link value="#{show.name}" outcome="/roles?showId=#{show.id}" /></td>
+                <td><h:link value="#{show.name}" outcome="/mybatis/roles?showId=#{show.id}" /></td>
                 <td><h:form><h:commandButton value="Delete" action="#{showsMyBatis.deleteShow(show)}" /></h:form></td>
             </tr>
         </ui:repeat>

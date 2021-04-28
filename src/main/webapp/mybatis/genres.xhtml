@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:f="http://java.sun.com/jsf/core">
+<head/>
+<body>
+<h2>Mybatis Genres:</h2>
+<table>
+    <tr>
+        <td>ID</td>
+        <td>Name</td>
+        <td>Delete?</td>
+    </tr>
+    <ui:repeat value="#{genresMyBatis.allGenres}" var="genre">
+        <tr>
+            <td>#{genre.id}</td>
+            <td><h:link value="#{genre.name}" /></td>
+            <td><h:form><h:commandButton value="Delete" action="#{genres.deleteGenre(genre)}" ></h:commandButton></h:form></td>
+        </tr>
+    </ui:repeat>
+</table>
+<h:form>
+    <h:inputText a:placeholder="name" value="#{genresMyBatis.genreToCreate.name}" required="true" />
+    <h:commandButton value="Create genre" action="#{genresMyBatis.createGenre}" ></h:commandButton>
+</h:form>
+<h:form>
+    <h:inputText a:placeholder="genre id" binding="#{inputGenre}" required="true" />
+    <h:inputText a:placeholder="show id" binding="#{inputShow}" required="true" />
+    <h:commandButton value="Add show to genre" action="#{genresMyBatis.addShowToGenre(inputShow.value, inputGenre.value)}" ></h:commandButton>
+</h:form>
+<h2>Shows:</h2>
+<table>
+    <tr>
+        <td>ID</td>
+        <td>Name</td>
+    </tr>
+    <ui:repeat value="#{showsMyBatis.allShows}" var="show">
+        <tr>
+            <td>#{show.id}</td>
+            <td><h:link value="#{show.name}" outcome="roles?showId=#{show.id}" /></td>
+        </tr>
+    </ui:repeat>
+</table>
+<h:link outcome="/index" value="Main page"/>
+</body>
+</html>

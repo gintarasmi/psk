@@ -9,6 +9,12 @@
     -->
     <id column="ID" jdbcType="INTEGER" property="id" />
     <result column="NAME" jdbcType="VARCHAR" property="name" />
+    <collection property="roles" javaType="ArrayList"
+                ofType="Role" column="id"
+                select="selectAllRoles"/>
+    <collection property="genres" javaType="ArrayList"
+                ofType="genre" column="id"
+                select="selectGenresForShow"/>
   </resultMap>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     <!--
@@ -56,5 +62,16 @@
     -->
     select ID, NAME
     from PUBLIC.SHOW
+  </select>
+  <select id="selectAllRoles" parameterType="java.lang.Integer" resultType="vu.lt.mybatis.model.Role">
+    select ID, NAME, SHOW_ID, EPISODECOUNT
+    from PUBLIC.ROLE
+    WHERE SHOW_ID = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="selectGenresForShow" resultType="vu.lt.mybatis.model.Genre">
+    SELECT g.id genreId, g.name name
+    FROM genre g
+           LEFT JOIN show_genre db ON g.id = db.genre_id
+    WHERE db.show_id = #{id,jdbcType=INTEGER}
   </select>
 </mapper>
