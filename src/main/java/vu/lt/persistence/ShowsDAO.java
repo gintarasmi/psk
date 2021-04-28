@@ -24,6 +24,7 @@ public class ShowsDAO {
         this.em.persist(show);
     }
     public void delete(Show show){ this.em.remove(show); }
+    public void update(Show show){ this.em.merge(show); }
 
     public Show findOne(Integer id) { return em.find(Show.class, id); }
 }

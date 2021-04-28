@@ -58,4 +58,10 @@ public class RolesForShowMyBatis{
     public List<Role> getRoles(Integer id){
        return showMapper.selectAllRoles(id);
     }
+
+    @Transactional
+    public String renameShow(){
+        this.showMapper.updateByPrimaryKey(show);
+        return "/mybatis/roles?faces-redirect=true&showId=" + this.show.getId();
+    }
 }

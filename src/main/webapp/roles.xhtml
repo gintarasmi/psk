@@ -38,5 +38,11 @@
         </h:commandButton>
     </h:form>
     <h:link outcome="index" value="Main page"/>
+    <h:form>
+        <h:inputText a:placeholder="new name" value="#{rolesForShow.show.name}" required="true" />
+        <h:commandButton value="Rename show" action="#{rolesForShow.renameShow}" >
+            <f:param name="showId" value="#{rolesForShow.show.id}" />
+        </h:commandButton>
+    </h:form>
 </body>
 </html>

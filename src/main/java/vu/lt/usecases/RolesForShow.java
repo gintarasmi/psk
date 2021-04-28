@@ -42,12 +42,17 @@ public class RolesForShow implements Serializable {
     public String createRole() {
         roleToCreate.setShow(this.show);
         rolesDAO.persist(roleToCreate);
-        return "roles?faces-redirect=true&showId=" + this.show.getId();
+        return "/roles?faces-redirect=true&showId=" + this.show.getId();
     }
 
     @Transactional
     public String deleteRole(Role role){
         this.rolesDAO.delete(role);
-        return "roles?faces-redirect=true&showId=" + this.show.getId();
+        return "/roles?faces-redirect=true&showId=" + this.show.getId();
+    }
+    @Transactional
+    public String renameShow(){
+        this.showDAO.update(show);
+        return "/roles?faces-redirect=true&showId=" + this.show.getId();
     }
 }

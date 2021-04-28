@@ -40,6 +40,7 @@ public class ShowsMyBatis {
         return "/mybatis/shows?faces-redirect=true";
     }
 
+
     private void loadAllShows(){
         this.allShows = showMapper.selectAll();
     }
