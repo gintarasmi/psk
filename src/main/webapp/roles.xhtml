@@ -44,5 +44,14 @@
             <f:param name="showId" value="#{rolesForShow.show.id}" />
         </h:commandButton>
     </h:form>
+    <h2>#{rolesForShow.show.name} genres:</h2>
+    <table>
+        <ui:repeat value="#{rolesForShow.show.genres}" var="genre">
+            <tr>
+                <td>#{genre.id}</td>
+                <td>#{genre.name}</td>
+            </tr>
+        </ui:repeat>
+    </table>
 </body>
 </html>

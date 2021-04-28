@@ -25,6 +25,7 @@ public class GenresDAO {
         this.em.persist(genre);
     }
     public void delete(Genre genre){ this.em.remove(genre); }
+    public void update(Genre genre){ this.em.merge(genre); }
 
     public Genre findOne(Integer id) { return em.find(Genre.class, id); }
 }

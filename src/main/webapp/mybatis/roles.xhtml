@@ -44,5 +44,13 @@
         <f:param name="showId" value="#{rolesForShowMyBatis.show.id}" />
     </h:commandButton>
 </h:form>
+<h2>Mybatis #{rolesForShowMyBatis.show.name} genres:</h2>
+<table>
+    <ui:repeat value="#{rolesForShowMyBatis.show.genres}" var="genre">
+        <tr>
+            <td>#{genre.name}</td>
+        </tr>
+    </ui:repeat>
+</table>
 </body>
 </html>

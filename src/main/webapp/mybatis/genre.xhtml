@@ -9,19 +9,19 @@
       xmlns:f="http://java.sun.com/jsf/core">
 <head/>
 <body>
-<h2>#{showsForGenre.genre.name} shows:</h2>
+<h2>#{showsForGenreMyBatis.genre.name} shows:</h2>
 <table>
-    <ui:repeat value="#{showsForGenre.genre.shows}" var="show">
+    <ui:repeat value="#{showsForGenreMyBatis.genre.shows}" var="show">
         <tr>
-            <td> <h:link value="#{show.name}" outcome="/roles?showId=#{show.id}" /> </td>
+            <td> <h:link value="#{show.name}" outcome="/mybatis/roles?showId=#{show.id}" /> </td>
         </tr>
     </ui:repeat>
 </table>
 <h:link outcome="/index" value="Main page"/>
 <h:form>
-    <h:inputText a:placeholder="new name" value="#{showsForGenre.genre.name}" required="true" />
-    <h:commandButton value="Rename genre" action="#{showsForGenre.renameGenre}" >
-        <f:param name="genreId" value="#{showsForGenre.genre.id}" />
+    <h:inputText a:placeholder="new name" value="#{showsForGenreMyBatis.genre.name}" required="true" />
+    <h:commandButton value="Rename genre" action="#{showsForGenreMyBatis.renameGenre}" >
+        <f:param name="genreId" value="#{showsForGenreMyBatis.genre.id}" />
     </h:commandButton>
 </h:form>
 </body>

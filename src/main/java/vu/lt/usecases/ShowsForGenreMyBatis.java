@@ -10,21 +10,19 @@ import java.util.Map;
 
 import lombok.Getter;
 import lombok.Setter;
-import vu.lt.entities.Genre;
-import vu.lt.entities.Role;
-import vu.lt.entities.Show;
-import vu.lt.persistence.GenresDAO;
-import vu.lt.persistence.RolesDAO;
-import vu.lt.persistence.ShowsDAO;
+import vu.lt.mybatis.dao.GenreMapper;
+import vu.lt.mybatis.dao.ShowMapper;
+import vu.lt.mybatis.model.Genre;
+
 
 @Model
-public class ShowsForGenre implements Serializable {
+public class ShowsForGenreMyBatis {
 
     @Inject
-    private ShowsDAO showDAO;
+    private ShowMapper showMapper;
 
     @Inject
-    private GenresDAO genresDAO;
+    private GenreMapper genreMapper;
 
     @Getter @Setter
     private Genre genre;
@@ -34,12 +32,12 @@ public class ShowsForGenre implements Serializable {
         Map<String, String> requestParameters =
                 FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap();
         Integer teamId = Integer.parseInt(requestParameters.get("genreId"));
-        this.genre = genresDAO.findOne(teamId);
+        this.genre = genreMapper.selectByPrimaryKey(teamId);
     }
     @Transactional
     public String renameGenre(){
-        this.genresDAO.update(genre);
-        return "/genre?faces-redirect=true&genreId=" + this.genre.getId();
+        this.genreMapper.updateByPrimaryKey(genre);
+        return "/mybatis/genre?faces-redirect=true&genreId=" + this.genre.getId();
     }
 
 }
