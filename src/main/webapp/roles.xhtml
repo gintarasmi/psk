@@ -18,7 +18,7 @@
         </tr>
         <ui:repeat value="#{rolesForShow.show.roles}" var="role">
             <tr>
-                <td>#{role.name}</td>
+                <td><h:link value="#{role.name}" outcome="/role?roleId=#{role.id}" /></td>
                 <td>#{role.episodeCount}</td>
                 <td>
                     <h:form>

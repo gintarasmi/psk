@@ -19,7 +19,7 @@
     <ui:repeat value="#{genres.allGenres}" var="genre">
         <tr>
             <td>#{genre.id}</td>
-            <td><h:link value="#{genre.name}" outcome="genre?genreId=#{genre.id}" /></td>
+            <td><h:link value="#{genre.name}" outcome="/genre?genreId=#{genre.id}" /></td>
             <td><h:form><h:commandButton value="Delete" action="#{genres.deleteGenre(genre)}" ></h:commandButton></h:form></td>
         </tr>
     </ui:repeat>
@@ -42,7 +42,7 @@
     <ui:repeat value="#{shows.allShows}" var="show">
         <tr>
             <td>#{show.id}</td>
-            <td><h:link value="#{show.name}" outcome="roles?showId=#{show.id}" /></td>
+            <td><h:link value="#{show.name}" outcome="/roles?showId=#{show.id}" /></td>
         </tr>
     </ui:repeat>
 </table>

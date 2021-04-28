@@ -9,13 +9,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="78763e8a-2d15-4248-b82e-d4873073cfc2" name="Default Changelist" comment="Added update for Shows and MyBatis Shows">
-      <change afterPath="$PROJECT_DIR$/src/main/java/vu/lt/usecases/ShowsForGenreMyBatis.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/mybatis/genre.xhtml" afterDir="false" />
+    <list default="true" id="78763e8a-2d15-4248-b82e-d4873073cfc2" name="Default Changelist" comment="Added update for Genre and MyBatis Genre. Added Genre page for MyBatis">
+      <change afterPath="$PROJECT_DIR$/src/main/java/vu/lt/usecases/Roles.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/vu/lt/usecases/RolesMyBatis.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/mybatis/role.xhtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/role.xhtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vu/lt/persistence/GenresDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vu/lt/persistence/GenresDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vu/lt/usecases/ShowsForGenre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vu/lt/usecases/ShowsForGenre.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/genre.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/genre.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vu/lt/mybatis/model/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vu/lt/mybatis/model/Role.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vu/lt/persistence/RolesDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vu/lt/persistence/RolesDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vu/lt/usecases/Genres.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vu/lt/usecases/Genres.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vu/lt/usecases/RolesForShow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vu/lt/usecases/RolesForShow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vu/lt/usecases/Shows.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vu/lt/usecases/Shows.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/genres.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/genres.xhtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/mybatis/roles.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/mybatis/roles.xhtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/roles.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/roles.xhtml" afterDir="false" />
     </list>
@@ -31,8 +36,8 @@
         <option value="Tag Library Descriptor" />
         <option value="cdi.beans_1_1" />
         <option value="jsf" />
-        <option value="XHTML File" />
         <option value="Class" />
+        <option value="XHTML File" />
       </list>
     </option>
   </component>
@@ -71,11 +76,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\gmink\Desktop\psk\src\main\webapp" />
       <recent name="C:\Users\gmink\Desktop\psk\src\main\resources" />
       <recent name="C:\Users\gmink\Desktop\psk\src\main\java\vu\lt\mybatis\dao" />
       <recent name="C:\Users\gmink\Desktop\psk\src\main\java\vu\lt\mybatis\model" />
       <recent name="C:\Users\gmink\Desktop\psk\src\main\java\vu\lt\usecases\mybatis\xml" />
-      <recent name="C:\Users\gmink\Desktop\psk\src\main\java\vu\lt\usecases" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="vu.lt.persistence" />
@@ -215,7 +220,7 @@
       <workItem from="1619268309923" duration="19349000" />
       <workItem from="1619513317658" duration="4692000" />
       <workItem from="1619518279644" duration="664000" />
-      <workItem from="1619595032770" duration="14202000" />
+      <workItem from="1619595032770" duration="17737000" />
     </task>
     <task id="LOCAL−00001" summary="Initial commit">
       <created>1619090907839</created>
@@ -271,7 +276,13 @@
       <option name="presentableId" value="LOCAL−00009" />
       <updated>1619614098360</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL−00010" summary="Added update for Genre and MyBatis Genre. Added Genre page for MyBatis">
+      <created>1619615497364</created>
+      <option name="number" value="LOCAL−00010" />
+      <option name="presentableId" value="LOCAL−00010" />
+      <updated>1619615497364</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -300,6 +311,7 @@
     <MESSAGE value="Fixed myBatis generation and added a page for myBatis Shows" />
     <MESSAGE value="Added myBatis roles and genres pages. Made all the relations" />
     <MESSAGE value="Added update for Shows and MyBatis Shows" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added update for Shows and MyBatis Shows" />
+    <MESSAGE value="Added update for Genre and MyBatis Genre. Added Genre page for MyBatis" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added update for Genre and MyBatis Genre. Added Genre page for MyBatis" />
   </component>
 </project>

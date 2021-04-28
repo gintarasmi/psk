@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:f="http://java.sun.com/jsf/core">
+<head/>
+<body>
+<h2>#{rolesMyBatis.role.name}:</h2>
+<h:form>
+    <h:inputText a:placeholder="new name" value="#{rolesMyBatis.role.name}" required="true" />
+    <h:inputText a:placeholder="new ep count" value="#{rolesMyBatis.role.episodecount}" required="true" />
+    <h:commandButton value="Edit role" action="#{rolesMyBatis.renameRole}" >
+        <f:param name="roleId" value="#{rolesMyBatis.role.id}" />
+    </h:commandButton>
+</h:form>
+<h:link outcome="/index" value="Main page"/>
+</body>
+</html>

@@ -18,7 +18,7 @@
     </tr>
     <ui:repeat value="#{rolesForShowMyBatis.show.roles}" var="role">
         <tr>
-            <td>#{role.name}</td>
+            <td><h:link value="#{role.name}" outcome="/mybatis/role?roleId=#{role.id}" /></td>
             <td>#{role.episodecount}</td>
             <td>
                 <h:form>

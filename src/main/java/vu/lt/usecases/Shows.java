@@ -32,12 +32,12 @@ public class Shows {
     @Transactional
     public String createShow(){
         this.showsDAO.persist(showToCreate);
-        return "index?faces-redirect=true";
+        return "/index?faces-redirect=true";
     }
     @Transactional
     public String deleteShow(Show showToDelete){
         this.showsDAO.delete(showToDelete);
-        return "index?faces-redirect=true";
+        return "/index?faces-redirect=true";
     }
 
     private void loadAllShows(){

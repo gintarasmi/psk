@@ -34,8 +34,8 @@ public class RolesForShow implements Serializable {
     public void init() {
         Map<String, String> requestParameters =
                 FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap();
-        Integer teamId = Integer.parseInt(requestParameters.get("showId"));
-        this.show = showDAO.findOne(teamId);
+        Integer showId = Integer.parseInt(requestParameters.get("showId"));
+        this.show = showDAO.findOne(showId);
     }
 
     @Transactional

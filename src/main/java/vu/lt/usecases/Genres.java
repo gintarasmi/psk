@@ -42,7 +42,7 @@ public class Genres {
     @Transactional
     public String createGenre(){
         this.genresDAO.persist(genreToCreate);
-        return "genres?faces-redirect=true";
+        return "/genres?faces-redirect=true";
     }
 
     @Transactional
@@ -53,12 +53,12 @@ public class Genres {
         if(genre == null) return "false";
         genre.addShow(show);
         genresDAO.persist(genre);
-        return "genres?faces-redirect=true";
+        return "/genres?faces-redirect=true";
     }
 
     @Transactional
     public String deleteGenre(Genre genreToDelete){
         this.genresDAO.delete(genreToDelete);
-        return "genres?faces-redirect=true";
+        return "/genres?faces-redirect=true";
     }
 }
